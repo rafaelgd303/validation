@@ -1,0 +1,35 @@
+﻿@model Validations.Models.AddUserVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+<h3>To jest widok do nowego kontrolera walidacji!</h3>
+
+<h2>Add new person</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div>
+        <div>
+            @Html.ValidationMessageFor(x => x.FirstName)
+            @Html.LabelFor(x => x.FirstName)
+            @Html.TextBoxFor(x => x.FirstName)
+        </div>
+        <div>
+            @Html.ValidationMessageFor(x => x.LastName)
+            @Html.LabelFor(x => x.LastName)
+            @Html.TextBoxFor(x => x.LastName)
+        </div>
+        <div>
+            @Html.ValidationMessageFor(x => x.EmailAddress)
+            @Html.LabelFor(x => x.EmailAddress)
+            @Html.TextBoxFor(x => x.EmailAddress)
+        </div>
+        <div>
+            <input type="submit" value="Save person" />
+        </div>
+    </div>
+}
